@@ -1,0 +1,7 @@
+﻿  Source.cpp
+C:\Users\Katerina\Workshop3\Sx\Sx\Source.cpp(19,15): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+C:\Users\Katerina\Workshop3\Sx\Sx\Source.cpp(27,33): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\Katerina\Workshop3\Sx\Sx\Source.cpp(47,19): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\Katerina\Workshop3\Sx\Sx\Source.cpp(68,29): warning C4244: инициализация: преобразование "float" в "size_t", возможна потеря данных
+C:\Users\Katerina\Workshop3\Sx\Sx\Source.cpp(71,26): warning C4244: инициализация: преобразование "float" в "size_t", возможна потеря данных
+  Sx.vcxproj -> C:\Users\Katerina\Workshop3\Sx\x64\Debug\Sx.exe
