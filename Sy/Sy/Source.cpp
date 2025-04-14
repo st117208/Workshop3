@@ -3,12 +3,12 @@
 #include <cmath>
 #include <iomanip>
 
-void in(float** a, float k, float n)
+void in(float** a, float c, float n)
 {
-    std::ifstream inputFile("Input.csv");;
+    std::ifstream in("Input.csv");
     for (int i = 0; i < n; i++)
     {
-        inputFile >> a[i][0] >> a[i][1];
+        in >> a[i][0] >> a[i][1];
     }
 }
 
@@ -20,7 +20,7 @@ float roundx(float m, int n)
     return tmp;
 }
 
-void colSi(float** a, double k, float n, float Si[])
+void colSi(float** a, double c, float n, float Si[])
 {
     for (int i = 0; i < n; i++)
     {
@@ -28,7 +28,7 @@ void colSi(float** a, double k, float n, float Si[])
     }
 }
 
-float Sx(float k, float n, float Si[])
+float Sx(float c, float n, float Si[])
 {
     float sum = 0;
     for (int i = 1; i < n - 1; i++)
@@ -38,9 +38,9 @@ float Sx(float k, float n, float Si[])
     return sum / (n - 2);
 }
 
-float dSx(float k, float n, float Si[])
+float dSx(float c, float n, float Si[])
 {
-    float S = roundx(Sx(k, n, Si), 1);
+    float S = roundx(Sx(c, n, Si), 1);
     float sum = 0;
     for (int i = 1; i < n - 1; i++)
     {
@@ -49,16 +49,17 @@ float dSx(float k, float n, float Si[])
     return sqrt(sum / ((n - 2) * (n - 3)));
 }
 
-void out(float** a, float k, float n, float Si[])
+void out(float** a, float c, float n, float Si[])
 {
-    colSi(a, k, n, Si);
+    colSi(a, c, n, Si);
     std::ofstream out("Output.csv");
     for (int i = 0; i < n; i++)
     {
         out << std::setprecision(2) << Si[i] << std::endl;
     }
-    out << std::endl << std::setprecision(2) << Sx(k, n, Si) << std::endl;
-    out << std::setprecision(2) << dSx(k, n, Si) << std::endl;
+
+    out << std::endl << std::setprecision(2) << Sx(c, n, Si) << std::endl;
+    out << std::setprecision(2) << dSx(c, n, Si) << std::endl;
 }
 
 int main()

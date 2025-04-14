@@ -1,0 +1,7 @@
+﻿  Source.cpp
+C:\Users\Katerina\Workshop3\max S\max S\Source.cpp(19,15): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+C:\Users\Katerina\Workshop3\max S\max S\Source.cpp(27,33): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\Katerina\Workshop3\max S\max S\Source.cpp(44,15): warning C4244: return: преобразование "double" в "float", возможна потеря данных
+C:\Users\Katerina\Workshop3\max S\max S\Source.cpp(64,29): warning C4244: инициализация: преобразование "float" в "size_t", возможна потеря данных
+C:\Users\Katerina\Workshop3\max S\max S\Source.cpp(67,26): warning C4244: инициализация: преобразование "float" в "size_t", возможна потеря данных
+  max S.vcxproj -> C:\Users\Katerina\Workshop3\max S\x64\Debug\max S.exe
