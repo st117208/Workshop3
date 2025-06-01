@@ -38,10 +38,31 @@ float avrgS(float c, float n, float Si[])
     return sum / n;
 }
 
+float daS(float c, float n, float Si[])
+{
+    float S = roundx(avrgS(c, n, Si), 1);
+    float sum = 0;
+    for (int i = 1; i < n - 1; i++)
+    {
+        sum = sum + pow(roundx(Si[i], 1) - S, 2);
+    }
+    return sqrt(sum / ((n - 2) * (n - 3)));
+}
+
 float Km(float c, float n, float Si[])
 {
     float Sm = roundx(avrgS(c, n, Si), 1);
     return Sm / 0.6; // 0.6 - среднее значение Sy
+}
+
+float dKm(float c, float n, float Si[])
+{
+    float Sy = 0.60;
+    float Sym = 300;
+    float dSy = 0.012;
+    float dSym = daS(c, n, Si);
+    float dK = pow(pow(1 / Sy, 2) * pow(dSym, 2) + pow(-(Sym / pow(Sy, 2)), 2) * pow(dSy, 2), 0.5);
+    return dK;
 }
 
 void out(float** a, float c, float n, float Si[])
@@ -53,7 +74,7 @@ void out(float** a, float c, float n, float Si[])
         out << std::setprecision(2) << Si[i] << std::endl;
     }
 
-    out << std::endl << std::setprecision(2) << avrgS(c, n, Si) << std::endl;
+    out << std::endl << std::setprecision(2) << avrgS(c, n, Si) << "   " << std::setprecision(2) << daS(c, n, Si) << "   " << std::setprecision(2) << dKm(c, n, Si) << std::endl;
     out << std::setprecision(2) << Km(c, n, Si) << std::endl;
 }
 
